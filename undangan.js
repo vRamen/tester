@@ -25,3 +25,14 @@ if (dataByDomain[host]) {
   titleEl.textContent = "Undangan Tidak Ditemukan 😓";
   detailEl.textContent = `Domain ${host} belum terdaftar.`;
 }
+
+
+const templateByDomain = {
+  "kamingundang.biz.id": "template1",
+  "contohdomainlain.id": "template2"
+};
+
+const currentHost = window.location.hostname;
+const selectedTemplate = templateByDomain[currentHost] || "template1"; // default
+
+window.location.href = `/${selectedTemplate}/index.html`;
