@@ -3,7 +3,7 @@ export function middleware(request) {
 
   const mapping = {
     "kamingundang.biz.id": "/template1/index.html",
-    "tester-beige.vercel.app": "/template2/index.html"
+    "weddify.biz.id": "/template2/index.html"
   };
 
   const destination = mapping[hostname.toLowerCase()] || "/";
