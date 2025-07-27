@@ -6,7 +6,7 @@ const dataByDomain = {
     judul: "Selamat Datang di Weddify 🎉",
     detail: "Buat undangan pernikahan digitalmu di sini!"
   },
-  "citra-adi.id": {
+  "kamingundang.biz.id": {
     judul: "Undangan Pernikahan 💍",
     detail: "Citra & Adi akan menikah pada 12 Agustus 2025. Kami mengundang Anda!"
   },
