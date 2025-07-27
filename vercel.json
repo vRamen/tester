@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "kamingundang.biz.id"
+        }
+      ],
+      "destination": "/template1/index.html"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "weddify.biz.id"
+        }
+      ],
+      "destination": "/template2/index.html"
+    }
+  ]
+}
