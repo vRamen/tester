@@ -1,12 +1,17 @@
+import { NextResponse } from "next/server";
+
 export function middleware(request) {
   const hostname = request.headers.get("host") || "";
 
   const mapping = {
-    "kamingundang.biz.id": "/template1/index.html",
-    "weddify.biz.id": "/template2/index.html"
+    "kamingundang.biz.id": "/template1",
+    "weddify.biz.id": "/template2",
   };
 
-  const destination = mapping[hostname.toLowerCase()] || "/";
+  const templatePath = mapping[hostname.toLowerCase()] || "/";
 
-  return Response.rewrite(new URL(destination, request.url));
+  const url = request.nextUrl.clone();
+  url.pathname = templatePath + url.pathname;
+
+  return NextResponse.rewrite(url);
 }
