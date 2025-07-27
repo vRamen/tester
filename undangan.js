@@ -1,38 +1,34 @@
 const host = window.location.hostname;
 
-// Mapping domain → konten
+// Data konten
 const dataByDomain = {
   "tester-beige.vercel.app": {
     judul: "Selamat Datang di Weddify 🎉",
-    detail: "Buat undangan pernikahan digitalmu di sini!"
+    detail: "Buat undangan pernikahan digitalmu di sini!",
+    templateClass: "template1"
   },
   "kamingundang.biz.id": {
     judul: "Undangan Pernikahan 💍",
-    detail: "Citra & Adi akan menikah pada 12 Agustus 2025. Kami mengundang Anda!"
+    detail: "Citra & Adi akan menikah pada 12 Agustus 2025. Kami mengundang Anda!",
+    templateClass: "template1"
   },
-  // Bisa tambah domain lain di sini...
+  "contohdomainlain.id": {
+    judul: "Undangan Lain",
+    detail: "Ini undangan template 2",
+    templateClass: "template2"
+  }
 };
 
-// Element target
 const titleEl = document.getElementById("judul");
 const detailEl = document.getElementById("detail");
 
-// Tampilkan konten sesuai domain
 if (dataByDomain[host]) {
   titleEl.textContent = dataByDomain[host].judul;
   detailEl.textContent = dataByDomain[host].detail;
+
+  // Ganti kelas body untuk style template
+  document.body.classList.add(dataByDomain[host].templateClass);
 } else {
   titleEl.textContent = "Undangan Tidak Ditemukan 😓";
   detailEl.textContent = `Domain ${host} belum terdaftar.`;
 }
-
-
-const templateByDomain = {
-  "kamingundang.biz.id": "template1",
-  "contohdomainlain.id": "template2"
-};
-
-const currentHost = window.location.hostname;
-const selectedTemplate = templateByDomain[currentHost] || "template1"; // default
-
-window.location.href = `/${selectedTemplate}/index.html`;
