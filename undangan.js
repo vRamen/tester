@@ -10,7 +10,7 @@ const dataByDomain = {
   "kamingundang.biz.id": {
     judul: "Undangan Pernikahan 💍",
     detail: "Citra & Adi akan menikah pada 12 Agustus 2025. Kami mengundang Anda!",
-    templateClass: "template1"
+    templateClass: "template2"
   },
   "contohdomainlain.id": {
     judul: "Undangan Lain",
