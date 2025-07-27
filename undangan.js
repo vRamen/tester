@@ -1,17 +1,12 @@
-(() => {
-  const templateByDomain = {
-    "kamingundang.biz.id": "template2",
-    "tester-beige.vercel.app": "template1",
+export function middleware(request) {
+  const hostname = request.headers.get("host") || "";
+
+  const mapping = {
+    "kamingundang.biz.id": "/template1/index.html",
+    "weddify.biz.id": "/template2/index.html"
   };
 
-  const host = window.location.hostname;
-  const templateFolder = templateByDomain[host];
+  const destination = mapping[hostname.toLowerCase()] || "/";
 
-  if (templateFolder) {
-    // Redirect ke folder template yang sesuai
-    window.location.href = `/${templateFolder}/index.html`;
-  } else {
-    // Kalau domain gak dikenali, tampil pesan error di root
-    document.body.innerHTML = "<h1>Domain tidak terdaftar</h1><p>Hubungi admin.</p>";
-  }
-})();
+  return Response.rewrite(new URL(destination, request.url));
+}
