@@ -2,7 +2,7 @@ const host = window.location.hostname;
 
 // Mapping domain → konten
 const dataByDomain = {
-  "weddify.id": {
+  "weddify.biz.id": {
     judul: "Selamat Datang di Weddify 🎉",
     detail: "Buat undangan pernikahan digitalmu di sini!"
   },
