@@ -1,7 +1,7 @@
 (() => {
   const templateByDomain = {
     "kamingundang.biz.id": "template2",
-    "tester-beige.vercel.app": "template2",
+    "weddify.biz.id": "template2",
   };
 
   const host = window.location.hostname;
